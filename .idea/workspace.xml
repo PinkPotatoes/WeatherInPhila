@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75c2d904-b7cb-4afb-9b24-625cde04ee1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather.controller.js" afterDir="false" />
-    </list>
+    <list default="true" id="75c2d904-b7cb-4afb-9b24-625cde04ee1d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -96,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weather.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+            <state relative-caret-position="174">
+              <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -227,12 +221,12 @@
       <workItem from="1537407985356" duration="610000" />
       <workItem from="1537450347061" duration="1695000" />
       <workItem from="1537453098904" duration="2016000" />
-      <workItem from="1537460779990" duration="1458000" />
+      <workItem from="1537460779990" duration="2091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23782000" />
+    <option name="totallyTimeSpent" value="24415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="235" y="16" width="1580" height="998" extended-state="0" />
@@ -296,8 +290,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weather.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+        <state relative-caret-position="174">
+          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,6 @@
 var http = require('https');
 
 var apiKey = "55332cbe654dd39daba89a39c1d41683";
-// Philadelphia latitude and longitude
-// var lat = 39.9526;
-// var long = 75.1652;
 function WeatherController(){
     this.getWeather = function(lat, long, sendResponse) {
         try {
