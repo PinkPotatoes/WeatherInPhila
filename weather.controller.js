@@ -5,7 +5,7 @@ const apiKey = "cb9d7a22f63077ef9398bf13d4dca3b5";
 class WeatherController {
     getWeather(sendResponse) {
         const url = `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&APPID=${apiKey}`;
-        var promise = http.get(url, function (response) {
+        http.get(url, function (response) {
             console.log('Status:', response.statusCode);
             let data = '';
             // If it encounters an error
