@@ -1,12 +1,12 @@
 var http = require('https');
 
 var apiKey = "55332cbe654dd39daba89a39c1d41683";
+// Philadelphia latitude and longitude
 var lat = 39.9526;
 var long = 75.1652;
 function WeatherController(){
     this.getWeather = function(sendResponse) {
-        // const url = `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&APPID=${apiKey}`;
-        var url = "https://api.darksky.net/forecast/"+apiKey+"/"+lat+","+long;//39.9526,75.1652";
+        var url = "https://api.darksky.net/forecast/"+apiKey+"/"+lat+","+long;
         http.get(url, function (response) {
             console.log('Status:', response.statusCode);
             let data = '';

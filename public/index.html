@@ -23,14 +23,12 @@
             xhr.open('GET', "http://localhost:3000/weather");
             xhr.responseType = 'json';
             xhr.onload = function() {
-                console.log(this.response);
                 var weatherInfo = document.getElementById("weatherInfo");
                 var text;
 
                 if (this.response && this.response.success) {
                     var res = this.response.payload.currently;
 
-                    console.log(res);
                     for (var key in res) {
                         var info = res[key];
 
