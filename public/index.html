@@ -17,13 +17,18 @@
             return finalResult;
         }
 
-        window.onload = function() {
+        function getWeatherInfo() {
+            var lat = document.getElementById('lat').value;
+            var long = document.getElementById('long').value;
+            console.log( "LAT: " + lat);
+            console.log( "LONG: " + long);
 
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', "http://localhost:3000/weather");
+            xhr.open('GET', "http://localhost:3000/weather/" + lat + "/" + long);
             xhr.responseType = 'json';
             xhr.onload = function() {
                 var weatherInfo = document.getElementById("weatherInfo");
+                weatherInfo.innerHTML = "";
                 var text;
 
                 if (this.response && this.response.success) {
@@ -50,11 +55,23 @@
             xhr.send();
 
         }
+
+        window.onload = function() {
+            document.getElementById('lat').value = 39.9526;
+            document.getElementById('long').value = 75.1652;
+            getWeatherInfo();
+        }
     </script>
 </head>
 <body>
     <h1> Philadelphia Weather - by Jin Lee </h1>
     <h4 class="disclaimer"> <a href="https://darksky.net/poweredby/">Powered By Dark Sky</a></h4>
+    <div>
+        Latitude: <input type="number" name="lat" id="lat">
+        Longitude: <input type="number" name="long" id="long">
+        <br>
+        <button onclick="getWeatherInfo()">Get Weather Info</button>
+    </div>
     <hr/>
     <div id="weatherInfo">
 

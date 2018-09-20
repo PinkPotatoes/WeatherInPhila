@@ -12,8 +12,8 @@ app.use(function(err, req, res, next) {
 
 var WeatherController = require("./weather.controller")
 
-app.get('/weather', function(req, res) {
+app.get('/weather/:lat/:long', function(req, res) {
     var wc = new WeatherController();
-    var data = wc.getWeather( (d) => {res.send(d)});
+    var data = wc.getWeather( req.params.lat, req.params.long, function(d) {res.send(d)});
 });
 app.listen(process.env.PORT || 3000);
