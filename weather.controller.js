@@ -1,10 +1,12 @@
-var http = require('http');
+var http = require('https');
 
-const cityId = "4560349";
-const apiKey = "cb9d7a22f63077ef9398bf13d4dca3b5";
-class WeatherController {
-    getWeather(sendResponse) {
-        const url = `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&APPID=${apiKey}`;
+var apiKey = "55332cbe654dd39daba89a39c1d41683";
+var lat = 39.9526;
+var long = 75.1652;
+function WeatherController(){
+    this.getWeather = function(sendResponse) {
+        // const url = `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&APPID=${apiKey}`;
+        var url = "https://api.darksky.net/forecast/"+apiKey+"/"+lat+","+long;//39.9526,75.1652";
         http.get(url, function (response) {
             console.log('Status:', response.statusCode);
             let data = '';

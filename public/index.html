@@ -8,8 +8,13 @@
     <script type="text/javascript">
 
         function KtoF(kelvin) {
-            // 9/5 (K - 273) + 32
             return Math.round((9 / 5 * kelvin - 459.67) * 100) / 100;
+        }
+
+        function camelToNormal(str) {
+            var result = str.replace( /([A-Z])/g, " $1" );
+            var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+            return finalResult;
         }
 
         window.onload = function() {
@@ -23,64 +28,19 @@
                 var text;
 
                 if (this.response && this.response.success) {
-                    const res = this.response.payload;
+                    var res = this.response.payload.currently;
 
-                    // Weather
-                    for (let w of res.weather) {
-                        var weather = document.createElement('p');
-                        text = document.createTextNode("Weather: " + w.main + ", " + w.description);
-                        weather.appendChild(text);
-                        weatherInfo.appendChild(weather);
-                    }
+                    console.log(res);
+                    for (var key in res) {
+                        var info = res[key];
 
-                    // Main
-                    if (res.main) {
-                        if (res.main.temp) {
-                            var temp = document.createElement('p');
-                            text = document.createTextNode("Temperature: " + KtoF(res.main.temp) + "F  (" +
-                                        KtoF(res.main.temp_min) + "F-" + KtoF(res.main.temp_max) + "F)");
-                            temp.appendChild(text);
-                            weatherInfo.appendChild(temp); // .temp_min , .temp_max
-                        }
+                        var prefix = camelToNormal(key) + ": ";
+                        var suffix = "";
 
-                        if (res.main.pressure) {
-                            var pressure = document.createElement('p');
-                            text = document.createTextNode("Pressure: " + res.main.pressure + " hPa");
-                            pressure.appendChild(text);
-                            weatherInfo.appendChild(pressure);
-                        }
-
-                        if (res.main.humidity) {
-                            var humidity = document.createElement('p');
-                            text = document.createTextNode("Humidity: " + res.main.humidity + "%");
-                            humidity.appendChild(text);
-                            weatherInfo.appendChild(humidity);
-                        }
-                    }
-
-                    if (res.wind && res.wind.speed) {
-                        var wind = document.createElement('p');
-                        text = document.createTextNode("Wind: " + res.wind.speed + "m/s");
-                        wind.appendChild(text);
-                        weatherInfo.appendChild(wind);
-                    }
-                    if (res.clouds && res.clouds.all) {
-                        var cloud = document.createElement('p');
-                        text = document.createTextNode("Cloudiness: " + res.clouds.all + "%");
-                        cloud.appendChild(text);
-                        weatherInfo.appendChild(cloud);
-                    }
-                    if (res.rain && res.rain["3h"]) {
-                        var rain = document.createElement('p');
-                        text = document.createTextNode("Rain (past 3hrs): " + res.rain["3h"] + "%");
-                        rain.appendChild(text);
-                        weatherInfo.appendChild(rain);
-                    }
-                    if (res.snow && res.snow["3h"]) {
-                        var snow = document.createElement('p');
-                        text = document.createTextNode("Snow (past 3hrs): " + res.rain["3h"] + "%");
-                        snow.appendChild(text);
-                        weatherInfo.appendChild(snow);
+                        var infoElement = document.createElement('p');
+                        text = document.createTextNode(prefix + info + suffix);
+                        infoElement.appendChild(text);
+                        weatherInfo.appendChild(infoElement);
                     }
                 }else {
                     var err = document.createElement('p');
@@ -96,7 +56,7 @@
 </head>
 <body>
     <h1> Philadelphia Weather - by Jin Lee </h1>
-    <h4 class="disclaimer"> ** Used the Open Weather Map API due to inability to access the Weather Underground API **</h4>
+    <h4 class="disclaimer"> <a href="https://darksky.net/poweredby/">Powered By Dark Sky</a></h4>
     <hr/>
     <div id="weatherInfo">
 

@@ -10,7 +10,7 @@ app.use(function(err, req, res, next) {
     next();
 })
 
-const WeatherController = require("./weather.controller")
+var WeatherController = require("./weather.controller")
 
 app.get('/weather', function(req, res) {
     var wc = new WeatherController();
