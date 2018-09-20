@@ -10,3 +10,8 @@ Test: http://localhost:3000/
 >*use npm install to install all dependencies
 >*run the application using npm start
 >*open http://localhost:3000/ to see site.
+>
+>
+>## Usage
+>Originally shows the weather in Philadelphia
+>Can input custom latitudees and longitudes
